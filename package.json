@@ -8,10 +8,7 @@
     "watch": "node-sass --watch src/resources/scss --output src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vuongngochau2004/nodejs-blog.git"
-  },
+
   "keywords": [
     "nodejs",
     "node",
@@ -19,6 +16,7 @@
   ],
   "author": "vuongngochau2004@gmail.com",
   "license": "ISC",
+  
   "dependencies": {
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2"
