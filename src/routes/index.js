@@ -1,17 +1,9 @@
-
+const newsRoute = require('./news'); 
+const siteRoute = require('./site'); 
 function route(app){
-    app.get('/', (req, res) => {
-        res.render('home');
-    }); 
-    app.get('/news', (req, res) => {
-        res.render('news');
-    }); 
-    app.get('/search', (req, res) => {
-        res.render('search');
-    }); 
-    app.post('/search', (req, res) => {
-        res.send(''); 
-    }); 
+
+    app.use('/news', newsRoute);
+    app.use('/', siteRoute); 
 }   
 
 module.exports = route; 
