@@ -1,16 +1,16 @@
-
 const Course = require('../models/Course');
+const mongoose = require('../../util/mongoose');
 
 class SiteController {
     // [GET] /news
-    index(req, res) {
-        db.any('select * from courses ' , [true])
-        .then(data => {
-            console.log('DATA:', data); // print data;
+    index(req, res, next) {
+        Course.find({})
+        .then(courses => {
+            res.render('home', { 
+            courses: mongoose.mongoosesToObject(courses) 
+            })
         })
-        .catch(error => {
-            console.log('ERROR:', error); // print the error;
-        });
+        .catch(next);           
     }
     search(req, res) {
         res.render('search');

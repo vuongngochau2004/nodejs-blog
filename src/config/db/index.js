@@ -1,23 +1,10 @@
-const pgp = require('pg-promise')()
-const db = pgp('postgres://postgres:bourbon@localhost:5432/f8_education_dev');
-
-
-function connect() {
+const mongoose = require('mongoose');
+async function connect() {
     try { 
-        
-        db.any('select * from courses ' , [true])
-        .then(data => {
-            console.log('DATA:', data); // print data;
-        })
-        .catch(error => {
-            console.log('ERROR:', error); // print the error;
-        });
-        
+        await mongoose.connect('mongodb://127.0.0.1:27017/f8_education_dev');  
         console.log('Connect success!!'); 
     } catch (error) {
         console.log('Connect failure!!'); 
     }
-}
-
-
+};
 module.exports = { connect };
