@@ -6,7 +6,7 @@ class SiteController {
     index(req, res, next) {
         Course.find({})
         .then(courses => {
-            res.render('home', { 
+            res.render('home', {    
             courses: mongoose.mongoosesToObject(courses) 
             })
         })
